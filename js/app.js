@@ -76,7 +76,7 @@
     updateThemeButtonLabel(theme) {
       if (!this.dom.themeToggle) return;
       const isDark = theme === 'dark';
-      this.dom.themeToggle.innerHTML = isDark ? '☀️ Світла тема' : '🌙 Темна тема';
+      this.dom.themeToggle.textContent = isDark ? 'Світла тема' : 'Темна тема';
     }
 
     /**
@@ -164,7 +164,7 @@
         btn.type = 'button';
         btn.className = 'category-tab';
         btn.setAttribute('aria-pressed', String(category.id === this.activeCategory));
-        btn.innerHTML = `<span>${category.icon}</span> <span>${category.name}</span>`;
+        btn.textContent = category.name;
 
         btn.addEventListener('click', () => {
           this.activeCategory = category.id;
@@ -379,7 +379,6 @@
       if (this.savedSketches.length === 0) {
         this.dom.savedList.innerHTML = `
           <div class="empty-state">
-            <span class="empty-state-icon">📋</span>
             Справа порожня. Складіть портрет і натисніть «Зберегти у справу».
           </div>
         `;
@@ -403,7 +402,7 @@
           </div>
           <div class="saved-actions">
             <button type="button" class="btn btn-sm btn-load" title="Завантажити у редактор">Відкрити</button>
-            <button type="button" class="btn-remove" title="Видалити зі справи" aria-label="Видалити">✕</button>
+            <button type="button" class="btn-remove" title="Видалити зі справи" aria-label="Видалити">&times;</button>
           </div>
         `;
 

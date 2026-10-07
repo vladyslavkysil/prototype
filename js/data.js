@@ -24,7 +24,6 @@ const FotorobotData = (() => {
     face: {
       id: 'face',
       name: 'Обличчя',
-      icon: '👤',
       options: [
         { id: 0, label: 'Овальне' },
         { id: 1, label: 'Кругле' },
@@ -34,7 +33,6 @@ const FotorobotData = (() => {
     hair: {
       id: 'hair',
       name: 'Зачіска',
-      icon: '✂️',
       options: [
         { id: 0, label: 'Без волосся' },
         { id: 1, label: 'Коротка' },
@@ -45,7 +43,6 @@ const FotorobotData = (() => {
     brows: {
       id: 'brows',
       name: 'Брови',
-      icon: '〰️',
       options: [
         { id: 0, label: 'Прямі' },
         { id: 1, label: 'Дугоподібні' },
@@ -55,7 +52,6 @@ const FotorobotData = (() => {
     eyes: {
       id: 'eyes',
       name: 'Очі',
-      icon: '👁️',
       options: [
         { id: 0, label: 'Мигдалеподібні' },
         { id: 1, label: 'Круглі' },
@@ -65,7 +61,6 @@ const FotorobotData = (() => {
     nose: {
       id: 'nose',
       name: 'Ніс',
-      icon: '👃',
       options: [
         { id: 0, label: 'Прямий' },
         { id: 1, label: 'Картоплиною' },
@@ -75,7 +70,6 @@ const FotorobotData = (() => {
     mouth: {
       id: 'mouth',
       name: 'Губи',
-      icon: '👄',
       options: [
         { id: 0, label: 'Тонкі' },
         { id: 1, label: 'Усмішка' },
@@ -85,7 +79,6 @@ const FotorobotData = (() => {
     skin: {
       id: 'skin',
       name: 'Колір шкіри',
-      icon: '🎨',
       options: SKIN_TONES.map((item, index) => ({
         id: index,
         label: item.label,
