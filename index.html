@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Інтерактивний криміналістичний прототип для складання фоторобота підозрюваного зі слів свідка.">
+  <title>Фоторобот: інтерактивний прототип</title>
+  
+  <!-- Шрифт Onest -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+  
+  <!-- Стилі застосунку -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Шапка застосунку -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-area">
+        <span class="brand-badge">Слідчий модуль</span>
+        <div>
+          <h1 class="site-title">Фоторобот: інтерактивний прототип</h1>
+          <p class="site-subtitle">Складання портрета підозрюваного разом зі свідком з готових елементів</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" type="button" aria-label="Перемкнути тему">
+          🌙 Темна тема
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Головний робочий простір -->
+  <main class="main-content">
+    <div class="app-grid">
+
+      <!-- Ліва колонка: Портрет та Експорт -->
+      <section class="card card-sticky" aria-labelledby="heading-portrait">
+        <div class="card-header">
+          <h2 class="card-title" id="heading-portrait">
+            <span>🖼️</span> Портрет
+          </h2>
+          <span class="card-subtitle">Векторна реконструкція</span>
+        </div>
+
+        <div class="portrait-canvas-wrapper">
+          <svg id="face-svg" viewBox="0 0 200 240" role="img" aria-label="Складений фоторобот підозрюваного"></svg>
+        </div>
+
+        <div class="portrait-description-box">
+          <strong>Словесний портрет:</strong>
+          <div id="portrait-description" aria-live="polite">Обличчя формується...</div>
+        </div>
+
+        <div class="portrait-export-buttons">
+          <button id="btn-download-svg" class="btn btn-sm" type="button" title="Зберегти як векторний SVG">
+            📥 Завантажити SVG
+          </button>
+          <button id="btn-download-png" class="btn btn-sm" type="button" title="Зберегти як растровий PNG">
+            🖼️ Завантажити PNG
+          </button>
+        </div>
+      </section>
+
+      <!-- Права колонка: Конструктор та Справа -->
+      <section class="controls-area" aria-labelledby="heading-builder">
+        <!-- Картка конструктора -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title" id="heading-builder">
+              <span>🧩</span> Складіть портрет зі слів свідка
+            </h2>
+            <span class="card-subtitle">Оберіть категорію рис</span>
+          </div>
+
+          <!-- Навігація по категоріях -->
+          <nav class="categories-nav" id="categories-nav" aria-label="Категорії рис обличчя"></nav>
+
+          <!-- Сітка варіантів для активної категорії -->
+          <div class="options-wrapper">
+            <h3 class="options-section-title">Доступні варіанти:</h3>
+            <div class="options-grid" id="options-grid" role="group" aria-label="Варіанти рис"></div>
+          </div>
+
+          <!-- Слайдери точного підгону -->
+          <div class="sliders-container" id="sliders-container" aria-label="Точне налаштування параметрів"></div>
+
+          <!-- Кнопки дій -->
+          <div class="actions-bar">
+            <button id="btn-save" class="btn btn-primary" type="button">
+              💾 Зберегти у справу
+            </button>
+            <button id="btn-random" class="btn" type="button">
+              🎲 Випадковий портрет
+            </button>
+            <button id="btn-reset" class="btn" type="button">
+              🔄 Почати спочатку
+            </button>
+          </div>
+        </div>
+
+        <!-- Картка збережених матеріалів справи -->
+        <div class="card saved-list-card" aria-labelledby="heading-dossier">
+          <div class="card-header">
+            <h2 class="card-title" id="heading-dossier">
+              <span>📁</span> Справа № 2026/1042: збережені фотороботи
+            </h2>
+            <span class="card-subtitle">Архів ідентифікацій</span>
+          </div>
+
+          <ul class="saved-list" id="saved-list">
+            <!-- Список генерується динамічно через app.js -->
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Підвал -->
+  <footer class="site-footer">
+    <p>Криміналістичний прототип складання фоторобота • Версія 2.0</p>
+  </footer>
+
+  <!-- Спливаючі сповіщення (Toast) -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Модульний JavaScript -->
+  <script src="js/data.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

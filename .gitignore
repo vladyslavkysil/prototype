@@ -1,0 +1,9 @@
+# Залежності та системні файли
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Логи та тимчасові файли
+*.log
+.vscode/
+.idea/
